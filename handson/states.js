@@ -1,8 +1,8 @@
-const { apiRoot, projectKey } = require("./client.js");
+const { apiRoot, projectKey } = require('./client.js');
 
-module.exports.createNewState = (stateDraftData) => {}
+module.exports.createNewState = stateDraftData => {};
 
-const createStateDraft = (stateDraftData) => {
+const createStateDraft = stateDraftData => {
   const { key, type, name, initial } = stateDraftData;
   return {
     key,
@@ -12,8 +12,8 @@ const createStateDraft = (stateDraftData) => {
   };
 };
 
-module.exports.getStateByKey = (key) => {}
+module.exports.getStateByKey = key => {};
 
-module.exports.getStateById = (ID) => {}
+module.exports.getStateById = ID => {};
 
-module.exports.addTransition = (stateId, transitionStateIds) => {}
+module.exports.addTransition = (stateId, transitionStateIds) => {};

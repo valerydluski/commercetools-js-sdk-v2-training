@@ -1,31 +1,32 @@
-const { apiRoot, projectKey } = require("./client.js");
-const { getCustomerByKey } = require( "./customer.js" );
+const { apiRoot, projectKey } = require('./client.js');
+const { getCustomerByKey } = require('./customer.js');
 
-module.exports.createCart = (customerKey) => {}
+module.exports.createCart = customerKey => {};
 
 module.exports.createAnonymousCart = () =>
-  apiRoot.withProjectKey({ projectKey })
+  apiRoot
+    .withProjectKey({ projectKey })
     .carts()
     .post({
       body: {
-        currency: "EUR",
-        country: "DE",
-      }
+        currency: 'EUR',
+        country: 'DE',
+      },
     })
-    .execute()
+    .execute();
 
-module.exports.customerSignIn = (customerDetails) => {}
+module.exports.customerSignIn = customerDetails => {};
 
-module.exports.getCartById = (ID) => {}
+module.exports.getCartById = ID => {};
 
-module.exports.addLineItemsToCart = (cartId, arrayOfSKUs) => {}
+module.exports.addLineItemsToCart = (cartId, arrayOfSKUs) => {};
 
-module.exports.addDiscountCodeToCart = (cartId, discountCode) => {}
+module.exports.addDiscountCodeToCart = (cartId, discountCode) => {};
 
-module.exports.createOrderFromCart = (cartId) => {}
+module.exports.createOrderFromCart = cartId => {};
 
-const createOrderFromCartDraft = (cartId) => {
-  return this.getCartById(cartId).then((cart) => {
+const createOrderFromCartDraft = cartId => {
+  return this.getCartById(cartId).then(cart => {
     return {
       id: cart.body.id,
       version: cart.body.version,
@@ -33,12 +34,12 @@ const createOrderFromCartDraft = (cartId) => {
   });
 };
 
-module.exports.getOrderById = (ID) => {}
+module.exports.getOrderById = ID => {};
 
-module.exports.updateOrderCustomState = (orderId, customStateKey) => {}
+module.exports.updateOrderCustomState = (orderId, customStateKey) => {};
 
-module.exports.createPayment = (paymentDraft) => {}
+module.exports.createPayment = paymentDraft => {};
 
-module.exports.setOrderState = (orderId, stateName) => {}
+module.exports.setOrderState = (orderId, stateName) => {};
 
-module.exports.addPaymentToOrder = (orderId, paymentId) => {}
+module.exports.addPaymentToOrder = (orderId, paymentId) => {};

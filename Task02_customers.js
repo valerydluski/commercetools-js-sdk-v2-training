@@ -5,19 +5,19 @@ const {
   createCustomerToken,
   confirmCustomerEmail,
   assignCustomerToCustomerGroup,
-} = require("./handson/customer");
-const { log } = require("./logger.js");
+} = require('./handson/customer');
+const { log } = require('./logger.js');
 
 const customerDraftData = {
-  firstName: "test",
-  lastName: "test",
-  email: "test@test.com",
-  password: "password",
-  key: "test123",
-  countryCode: "DE",
+  firstName: 'test',
+  lastName: 'test',
+  email: 'test@test.com',
+  password: 'password',
+  key: 'test123',
+  countryCode: 'DE',
 };
 
- createCustomer(customerDraftData).then(log).catch(log);
+createCustomer(customerDraftData).then(log).catch(log);
 
 // getCustomerByKey('test123').then(log).catch(log);
 
