@@ -1,5 +1,5 @@
-const {getMe, getMyOrders } = require("./handson/my");
-const { log } = require("./logger");
+const { getMe, getMyOrders } = require('./handson/my');
+const { log } = require('./logger');
 
 // TODO: SPA api-client
 

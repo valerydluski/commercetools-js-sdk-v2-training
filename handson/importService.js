@@ -1,19 +1,19 @@
-const { importApiRoot, projectKey } = require("./client.js");
-const csvtojsonV2 = require("csvtojson");
+const { importApiRoot, projectKey } = require('./client.js');
+const csvtojsonV2 = require('csvtojson');
 
-module.exports.createImportContainer = (key) =>{}
+module.exports.createImportContainer = key => {};
 
-module.exports.checkImportSummary = (importContainerKey) => {}
+module.exports.checkImportSummary = importContainerKey => {};
 
-module.exports.checkImportOperations = (importContainerKey) => {}
+module.exports.checkImportOperations = importContainerKey => {};
 
-module.exports.checkImportOperationById = (id) => {}
+module.exports.checkImportOperationById = id => {};
 
-module.exports.importProducts = async (importContainerKey) => {}
+module.exports.importProducts = async importContainerKey => {};
 
 const createImportProductsDraft = async () => {
   return {
-    type: "product-draft",
+    type: 'product-draft',
     resources: await getProductDraftsArray(),
   };
 };
@@ -22,33 +22,33 @@ const getProductDraftsArray = () => {
   // get data from csv
   // create product drafts array and send it back
   let productDraftsArray = [];
-  let participantNamePrefix = "ff";
+  let participantNamePrefix = 'ff';
   return csvtojsonV2()
-    .fromFile("./products.csv")
-    .then((products) => {
-      products.forEach((product) => {
+    .fromFile('./products.csv')
+    .then(products => {
+      products.forEach(product => {
         productDraftsArray.push({
-          key: participantNamePrefix + "-" + product.productName,
+          key: participantNamePrefix + '-' + product.productName,
           name: {
-            "de": product.productName,
+            de: product.productName,
           },
           productType: {
-            typeId: "product-type",
+            typeId: 'product-type',
             key: product.productType,
           },
           slug: {
-            "de": participantNamePrefix + "-" + product.productName,
+            de: participantNamePrefix + '-' + product.productName,
           },
           description: {
-            "de": product.description,
+            de: product.description,
           },
           masterVariant: {
-            sku: participantNamePrefix + "-" +product.inventoryId,
-            key: participantNamePrefix + "-" +product.productName,
+            sku: participantNamePrefix + '-' + product.inventoryId,
+            key: participantNamePrefix + '-' + product.productName,
             prices: [
               {
                 value: {
-                  type: "centPrecision",
+                  type: 'centPrecision',
                   currencyCode: product.currencyCode,
                   centAmount: parseInt(product.basePrice),
                 },

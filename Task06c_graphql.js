@@ -1,6 +1,5 @@
-const { apiRoot, projectKey } = require("./handson/client.js");
-const { log } = require("./logger");
-
+const { apiRoot, projectKey } = require('./handson/client.js');
+const { log } = require('./logger');
 
 const query = `
 query {
@@ -22,4 +21,4 @@ query {
   }
   `;
 
-  // TODO: POST GraphQL query
+// TODO: POST GraphQL query

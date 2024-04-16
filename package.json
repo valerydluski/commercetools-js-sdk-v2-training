@@ -7,6 +7,7 @@
     "1": "node Task01_project_setup.js",
     "2": "node Task02_customers.js",
     "3": "node Task03_import_sync_products.js",
+    "8": "node Task08_subscriptions.js",
     "4a": "node Task04a_states.js",
     "4b": "node Task04b_checkout.js",
     "4c": "node Task04c_merging.js",
@@ -19,7 +20,7 @@
     "7a": "node Task07a_custom_types.js",
     "7b": "node Task07b_custom_objects.js",
     "7c": "node Task07c_extensions.js",
-    "8": "node Task08_subscriptions.js"
+    "format": "prettier --write ./"
   },
   "dependencies": {
     "@commercetools/importapi-sdk": "^2.4.0",
@@ -30,7 +31,8 @@
     "csvtojson": "^2.0.10",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "prettier": "^3.2.5"
   },
   "resolutions": {
     "csvtojson/**/lodash": "^4.17.21",
